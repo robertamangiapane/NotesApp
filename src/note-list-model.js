@@ -3,8 +3,7 @@
     this.list = []
   }
 
-  NoteList.prototype.addNote = function(text) {
-    note = new Note(text)
+  NoteList.prototype.addNote = function(note) {
     this.list.push(note)
   }
 
