@@ -8,16 +8,25 @@
     <script src="src/note-model.js"></script>
     <script src="src/note-list-model.js"></script>
     <script src="src/note-list-view.js"></script>
+    <script src="src/note-controller.js"></script>
 
     <script src="spec/note-modelSpec.js"></script>
     <script src="spec/note-list-modelSpec.js"></script>
     <script src="spec/note-list-viewSpec.js"></script>
     <script src="spec/note-controllerSpec.js"></script>
+    <script>
+      window.onload = function() {
+        var note = new Note("Favourite drink: seltzer.")
+        var noteList = new NoteList()
+        var noteController = new NoteController(noteList, note);
+        noteController.getAndDisplayHTML();
+      }
+    </script>
   </head>
   <body>
 
     <div id="app">
-        hello
+      hello
     </div>
 
     <script src="src/note-controller.js"></script>
