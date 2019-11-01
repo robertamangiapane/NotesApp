@@ -22,9 +22,8 @@
     </script>
     <script>
       window.onload = function() {
-        var note = new Note("Favourite drink: seltzer.")
         var noteList = new NoteList()
-        var noteController = new NoteController(noteList, note);
+        var noteController = new NoteController(noteList);
         noteController.getAndDisplayHTML();
       }
     </script>

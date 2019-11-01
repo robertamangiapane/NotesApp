@@ -1,6 +1,6 @@
 (function(exports) {
-  function NoteListView(noteListModel) {
-    this.noteList = noteListModel
+  function NoteListView(noteList) {
+    this.noteList = noteList
   }
 
   NoteListView.prototype.returnHTML = function() {
@@ -8,7 +8,7 @@
     var notes = []
 
     function html_function(item) {
-      notes.push(item.text)
+      notes.push(item.text.substring(0, 20) + "...")
     }
 
     this.noteList.list.forEach(html_function)

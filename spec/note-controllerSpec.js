@@ -15,6 +15,6 @@
   }
 
   var docDouble = new DocumentDouble()
-  var htmlString = "<ul><li><div>Favourite drink: seltzer.</div></li></ul>"
+  var htmlString = "<ul><li><div>" + note.text.substring(0, 20) + "...</div></li></ul>"
   assert.isEqual(noteController.getAndDisplayHTML(docDouble), htmlString)
 })()
