@@ -1,7 +1,8 @@
 (function note_controller_diplay_html() {
   var note = new Note("Favourite drink: seltzer.")
   var noteList = new NoteList()
-  var noteController = new NoteController(noteList, note);
+  noteList.addNote(note)
+  var noteController = new NoteController(noteList);
 
   function DocumentDouble() {}
   function ElementDouble() {}
@@ -16,5 +17,5 @@
 
   var docDouble = new DocumentDouble()
   var htmlString = "<ul><li><div>" + note.text.substring(0, 20) + "...</div></li></ul>"
-  assert.isEqual(noteController.getAndDisplayHTML(docDouble), htmlString)
+  assert.isEqual(noteController.getAndDisplayHTML(docDouble, "app"), htmlString)
 })()
