@@ -5,17 +5,17 @@
 
   NoteListView.prototype.returnHTML = function() {
 
-    var notes = []
+    var notes = ""
 
-    function html_function(item) {
-      notes.push(item.text.substring(0, 20) + "...")
-    }
+    this.noteList.list.forEach(function(item) {
+      var string = item.text.substring(0, 20) + "..."
+      var id = item.id
 
-    this.noteList.list.forEach(html_function)
+      notes += '<div id="' + id + '"><a href="#notes/' + id + '" id="' + id+ '">' + string + '</a></div>'
+    });
+    console.log(notes)
 
-    notesString = notes.join("</div></li><li><div>")
-
-    return "<ul><li><div>" + notesString + "</div></li></ul>"
+    return notes
   }
 
   exports.NoteListView = NoteListView

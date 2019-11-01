@@ -17,21 +17,19 @@
     <script src="spec/note-list-modelSpec.js"></script>
     <script src="spec/note-list-viewSpec.js"></script>
     <script src="spec/note-controllerSpec.js"></script>
-    <script src="spec/single-note-viewSpec.js">
-
-    </script>
+    <script src="spec/single-note-viewSpec.js"></script>
     <script>
       window.onload = function() {
-        var note = new Note("Favourite drink: seltzer.")
-        var noteList = new NoteList()
-        var noteController = new NoteController(noteList);
-        noteList.addNote(note)
-        noteController.getAndDisplayHTML();
+        var noteController = new NoteController();
+        noteController.getAndDisplayHTML(noteController.noteListView.returnHTML());
       }
     </script>
   </head>
   <body>
-
+    <!-- <form>
+      <input type="text" id="my-textbox">
+      <button type="submit" name="button">Create note</button>
+    </form> -->
     <div id="app">
       hello
     </div>
